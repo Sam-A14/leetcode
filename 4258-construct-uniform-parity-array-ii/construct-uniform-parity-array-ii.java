@@ -1,17 +1,21 @@
 class Solution {
     public boolean uniformArray(int[] nums1) {
-      int n = nums1.length;
-      int minOdd =Integer.MAX_VALUE;
-      for(int i =0;i<n;i++){
-        if(nums1[i]%2!=0){
-           minOdd = Math.min(minOdd,nums1[i]);
+        int minOdd = Integer.MAX_VALUE;
+
+        // Find smallest odd number
+        for (int x : nums1) {
+            if (x % 2 != 0) {
+                minOdd = Math.min(minOdd, x);
+            }
         }
-      }
-      for(int i =0;i<n;i++){
-        if(nums1[i]%2==0 && minOdd!=Integer.MAX_VALUE && nums1[i]<minOdd){
-            return false;
+
+        // If an even number is smaller than minOdd, impossible
+        for (int x : nums1) {
+            if (x % 2 == 0 && minOdd != Integer.MAX_VALUE && x < minOdd) {
+                return false;
+            }
         }
-      }
-     return true; 
+
+        return true;
     }
 }
