@@ -1,6 +1,8 @@
 class Solution {
     public boolean checkInclusion(String s1, String s2) {
-        
+        if(s1.length()>s2.length()){
+            return false;
+        }
         int [] s1count = new int[26];
         int [] windowCount = new int[26];
         for(char c:s1.toCharArray()){
