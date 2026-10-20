@@ -4,7 +4,6 @@ class Solution {
         int [] ans = new int[n];
         Arrays.fill(ans,0);
         Stack<Integer> stack = new Stack<>();
-        int count =0;
         for(int i =0;i<n;i++){
             while(!stack.isEmpty() && temperatures[stack.peek()]<temperatures[i]){
                 int index = stack.pop();
